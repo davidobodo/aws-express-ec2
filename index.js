@@ -1,13 +1,14 @@
 const express = require("express");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
-
-const PORT = 5005;
 
 app.get("/", (_req, res) => {
 	res.send("Hello from the most simply express application in the world");
 });
 
-app.listen(PORT, () => {
-	console.log(`==========APP LISTENING ON PORT ${PORT}`);
+app.listen(process.env.PORT, () => {
+	console.log(`==========APP LISTENING ON PORT ${process.env.PORT}`);
 });
